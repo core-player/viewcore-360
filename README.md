@@ -1,4 +1,4 @@
-## @core-player/viewcore-360
+## viewcore-360
 
 A Display Layer of [vue-core-video-player](https://github.com/core-player/vue-core-video-player) to Show 360 Video Contents 
 
