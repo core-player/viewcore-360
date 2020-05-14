@@ -1,5 +1,5 @@
 // Vertex shader program
-const vertextShader = `
+const vertexShader = `
 attribute vec2 aVertexPosition;
 uniform mat4 proj_inv;
 varying vec3 vDirection;
@@ -15,4 +15,4 @@ void main(void) {
 }
 `
 
-export default vertextShader
+export default vertexShader

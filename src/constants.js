@@ -1,0 +1,21 @@
+const ERROR_CODE = {
+  WEBGL_ERROR: 36001,
+  SHADER_ERROR: 36002,
+  LINK_ERROR: 36003
+}
+
+const WIDE_SCREEN_FOV = 106
+const PORTRAIT_SCREEN_FOV = 60
+
+const DEFAULT_WEBGL_CONFIG = {
+  hfov: 360.0,
+  vfov: 180.0,
+  projection: 'mono',
+}
+
+export {
+  ERROR_CODE,
+  WIDE_SCREEN_FOV,
+  PORTRAIT_SCREEN_FOV,
+  DEFAULT_WEBGL_CONFIG
+}

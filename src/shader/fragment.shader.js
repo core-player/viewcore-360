@@ -1,12 +1,12 @@
 const fragmentShader = `
 precision highp float;
 varying vec3 vDirection;
-uniform  float eye;
+uniform float eye;
 uniform float projection;
 uniform float hfov;
 uniform float vfov;
 uniform sampler2D uSampler;
-*/
+
 uniform float PI;
 vec4 directionToColor(vec3 direction, float eye, float projection) {
 /*
@@ -30,12 +30,6 @@ if (hsep != 0.0 && (theta > 0.0 && theta < hsep || theta > -hsep && theta <= 0.0
 if (vsep != 0.0 && (phi > vsep || phi < -vsep)) {
     return vec4(0,0,0,1);
 }
-/*
-* The Nexus 7 and the Moto X (and possibly many others) have
-* a buggy atan2 implementation that screws up when the numerator
-* (the first argument) is too close to zero.  (The 1e-4 is carefully
-* chosen: 1e-5 doesn't fix the problem.
-*/
 if (abs(direction.x) < 1e-4 * abs(direction.z)) {
     theta = 0.5*PI * (1.0 - sign(-1.0 * direction.z));
 }

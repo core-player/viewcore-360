@@ -1,1 +1,1 @@
-// handle webXR
+// handle web
