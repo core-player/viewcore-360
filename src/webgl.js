@@ -21,9 +21,9 @@ const webGL = {
     } catch (err) {
       this.handleError(err)
     }
+    this._link()
     this._createBuffer()
     this._createTextures()
-    this._link()
     window.addEventListener('resize', () => {
       this.resize()
     })
@@ -52,7 +52,7 @@ const webGL = {
   _createTextures () {
     const webGL = this._gl
     const texture = webGL.createTexture()
-    webGL.bindTexture(webGL.TEXTURE2D, texture)
+    webGL.bindTexture(webGL.TEXTURE_2D, texture)
     webGL.texParameteri(webGL.TEXTURE_2D, webGL.TEXTURE_MAG_FILTER, webGL.LINEAR)
     webGL.texParameteri(webGL.TEXTURE_2D, webGL.TEXTURE_MIN_FILTER, webGL.LINEAR)
     webGL.texParameteri(webGL.TEXTURE_2D, webGL.TEXTURE_WRAP_S, webGL.CLAMP_TO_EDGE)
@@ -67,7 +67,7 @@ const webGL = {
 
   _updateTextures () {
     const webGL = this._gl
-    webGL.bindTexture(webGL.TEXTURE2D, this._texture)
+    // webGL.bindTexture(webGL.TEXTURE2D, this._texture)
     webGL.pixelStorei(webGL.UNPACK_FLIP_Y_WEBGL, true)
     webGL.texImage2D(
       webGL.TEXTURE_2D, 0, webGL.RGB, webGL.RGB,
@@ -148,7 +148,7 @@ const webGL = {
     webGL.uniform1i(this.uniforms.rotateFlag, 0)
     webGL.useProgram(this._program)
 
-    webGL.bindBuffer(webGL.ARRAY_BUFFER, this._positionsBuffer)
+    webGL.bindBuffer(webGL.ARRAY_BUFFER, this._buffer)
     webGL.vertexAttribPointer(
       this.attributes.aVertexPosition, 2, webGL.FLOAT, false, 0, 0,
     )
@@ -176,7 +176,7 @@ const webGL = {
     webGL.uniformMatrix4fv(this.uniforms.proj_inv, false, inv)
 
     // Draw
-    webGL.bindBuffer(webGL.ELEMENT_ARRAY_BUFFER, this._verticesIndexBuffer)
+    webGL.bindBuffer(webGL.ELEMENT_ARRAY_BUFFER, this._vertexBuffer)
     webGL.drawElements(webGL.TRIANGLES, 6, webGL.UNSIGNED_SHORT, 0)
   },
 

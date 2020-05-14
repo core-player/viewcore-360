@@ -11,6 +11,7 @@ const _viewCore = {
 
   createCanvas() {
       const { $el, $video, config } = this.player;
+      console.log($video);
       const canvas = document.createElement('canvas')
       canvas.style.position = 'absolute'
       canvas.style.left = 0
@@ -26,6 +27,7 @@ const _viewCore = {
         this.player.emit('error', err)
       })
       this.player.on('loadedmetadata', () => {
+        console.log($video)
         webGL.start()
       })
   },
