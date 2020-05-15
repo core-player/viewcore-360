@@ -30,3 +30,9 @@ export const isPortrait = () => {
 
   return Math.abs(orientation) !== 90; 
 }
+
+export const createNode = (str) => {
+  var el = document.createElement('div')
+  el.innerHTML = str;
+  return el.children[0]
+}

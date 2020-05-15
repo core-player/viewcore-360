@@ -1,7 +1,10 @@
 /**
  * A display layer to play 360 video contents
  * */
+import { EVENTS } from 'vue-core-video-player'
 import webGL from './webGL'
+import UI from './ui'
+import WebXR from './webXR'
 
 const _viewCore = {
   init (player) {
@@ -26,11 +29,27 @@ const _viewCore = {
       webGL.init(canvas, $video, config, (err) => {
         this.player.emit('error', err)
       })
-      this.player.on('loadedmetadata', () => {
+      UI.init(this.player, canvas)
+      WebXR.init(this.player, UI.$XRButton, webGL.gl)
+      this.player.on(EVENTS.LOADEDMETADATA, () => {
         console.log($video)
         webGL.start()
+        this._bindEvents();
       })
   },
+
+  _bindEvents() {
+    if (this.eventsBind) {
+      return
+    }
+    this.eventsBind = true
+    this.player.on(EVENTS.PLAY, () => {
+      webGL.stop()
+    })
+    this.player.on(EVENTS.PAUSE, () => {
+      webGL.start()
+    })
+  }
 
 }
 export default function viewcore360 (player, config) {

@@ -31,6 +31,10 @@
     "env": {
       "node": true
     },
+    "globals": {
+      "XRWebGLLayer": true,
+      "VRFrameData": true
+    },
     "extends": [
       "plugin:vue/essential",
       "eslint:recommended"

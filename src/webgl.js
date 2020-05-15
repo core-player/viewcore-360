@@ -128,7 +128,6 @@ const webGL = {
     }
     webGL.shaderSource(result, theSource)
     webGL.compileShader(result)
-    console.log(name)
     if (!webGL.getShaderParameter(result, webGL.COMPILE_STATUS)) {
       const info = webGL.getShaderInfoLog(result)
       this.handleError({

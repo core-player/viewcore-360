@@ -1,0 +1,54 @@
+.viewcore-360-layer {
+   background-color: rgba(0,0,0, .6);
+}
+.viewcore-360-layer .webxr-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 42px;
+    padding: 0 16px;
+    line-height: 42px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    color: #ccc;
+    font-weight: bold;
+}
+.viewcore-360-layer.active .webxr-button {
+    display: flex;
+}
+.viewcore-360-layer .webxr-button .svg-icon {
+    width: 30px;
+    height: 30px;
+    padding-right: 10px;
+    fill: #ccc;
+}
+.viewcore-360-layer .webxr-button:hover {
+    border-color: #fff;
+    
+}
+.viewcore-360-layer .webxr-button:hover .svg-icon {
+    fill: #fff;
+}
+
+.viewcore-360-layer .guide-360 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    margin-top: -40px;
+    margin-left: -40px;
+    transition: all .25s ease-in;
+}
+.viewcore-360-layer .guide-360.hidden {
+    opacity: 0;
+    transform: scale(.75, .75);
+}
+.viewcore-360-layer .guide-360 .svg-icon {
+    width: 60px;
+    height: 60px;
+    fill: #fff;
+}
