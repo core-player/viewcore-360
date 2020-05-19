@@ -34,13 +34,16 @@
 }
 
 .viewcore-360-layer .guide-360 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 100px;
     left: 50%;
     top: 50%;
-    margin-top: -40px;
-    margin-left: -40px;
+    margin-top: -50px;
+    margin-left: -90px;
     transition: all .25s ease-in;
 }
 .viewcore-360-layer .guide-360.hidden {

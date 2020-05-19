@@ -43,7 +43,7 @@ export default {
 | ------------- |:-------------:| -----:|----------:|
 | hfov     | Number | 360 | The horizontal field of view [fov](https://wiki.panotools.org/Field_of_View) |
 | vfov     | Number | 180 | The vertical field of view  [fov](https://wiki.panotools.org/Field_of_View) |
-| projection     | String | 'mono','stere' | The VR projection effect |
+| projection     | String | 'mono','stereo' | The VR projection effect [what is it?](https://immersionvr.co.uk/blog/monoscopic-vs-stereoscopic-360-vr/) |
 | disableDrag |  Boolean | false     | Disable user to drag camera to view other angles |
 
 
