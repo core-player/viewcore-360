@@ -239,6 +239,7 @@ const webGL = {
         this.render()
       }
     })
+    console.log('render');
   },
 
   resize () {
